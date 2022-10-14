@@ -18,11 +18,11 @@ const show = (el) => {
   el.classList.remove('hide')
 }
 
-const onUserSearch = (e) => {
-  e.preventDefault()
-  const username = document.querySelector(".user_form__input").value
-  const data = axios.get(`/user/${username}`).then(({ data }) => data)
-}
+// const onUserSearch = (e) => {
+//   e.preventDefault()
+//   const username = document.querySelector(".user_form__input").value
+//   const data = axios.get(`/user/${username}`).then(({ data }) => data)
+// }
 
 options.forEach((item) => {
   item.addEventListener('click', useItem.bind(this))
@@ -39,5 +39,5 @@ closeButton.addEventListener("click", (e) => {
   hide(instr)
 })
 
-userSearchButton.addEventListener("click", onUserSearch.bind(this))
+// userSearchButton.addEventListener("click", onUserSearch.bind(this))
 
