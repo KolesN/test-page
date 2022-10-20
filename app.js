@@ -9,7 +9,7 @@ import { UserController, CoinController, ProductController, OrdersUsersControlle
 
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 mongoose.connect('mongodb+srv://KolesN:HiThere@cluster0.z8bpk8z.mongodb.net/?retryWrites=true&w=majority')
   .then(() => console.log('DB connected'))
