@@ -6,7 +6,7 @@ const userSearchButton = document.querySelector(".user_form__button")
 const userInput = document.querySelector(".user_form__input")
 
 const loadProducts = async () => {
-  const data = await fetch('http://localhost:3000/product').then(res => res.json())
+  const data = await fetch('https://test-app-ko.herokuapp.com/product').then(res => res.json())
 
   const items = document.querySelectorAll('.options__item')
   items.forEach((item, index) => {
@@ -33,7 +33,7 @@ const clearProducts = () => {
 }
 
 const setUser = async (username = 'test1') => {
-  const user = await fetch(`http://localhost:3000/user/${username}`)
+  const user = await fetch(`https://test-app-ko.herokuapp.com/user/${username}`)
     .then((item) => item.json())
     .catch((err) => {})
   if (user && user[0]) {
@@ -84,16 +84,16 @@ const useItem = async (e) => {
   }
   if (classList.contains('call')) {
     const newBody = JSON.stringify({ ...body, 'product_id': '1'})
-    await fetch('http://localhost:3000/order', { ...options, body: newBody })
+    await fetch('https://test-app-ko.herokuapp.com/order', { ...options, body: newBody })
   } else if (classList.contains('special')) {
     const newBody = JSON.stringify({ ...body, 'product_id': '2'})
-    await fetch('http://localhost:3000/order', { ...options, body: newBody })
+    await fetch('https://test-app-ko.herokuapp.com/order', { ...options, body: newBody })
   } else if (classList.contains('course')) {
     const newBody = JSON.stringify({ ...body, 'product_id': '3'})
-    await fetch('http://localhost:3000/order', { ...options, body: newBody })
+    await fetch('https://test-app-ko.herokuapp.com/order', { ...options, body: newBody })
   } else if (classList.contains('course_too')) {
     const newBody = JSON.stringify({ ...body, 'product_id': '4'})
-    await fetch('http://localhost:3000/order', { ...options, body: newBody })
+    await fetch('https://test-app-ko.herokuapp.com/order', { ...options, body: newBody })
   }
 }
 
