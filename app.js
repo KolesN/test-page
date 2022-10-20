@@ -18,7 +18,7 @@ mongoose.connect('mongodb+srv://KolesN:HiThere@cluster0.z8bpk8z.mongodb.net/?ret
 
 app.use(express.json())
 app.use(cors())
-app.use('/', express.static('./'))
+app.use('/', express.static(path.join(path.resolve() + '/')))
 
 app.get('/', function(req, res) {
   res.sendFile(path.join(path.resolve() + '/index.html'))
