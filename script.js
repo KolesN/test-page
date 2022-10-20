@@ -94,7 +94,6 @@ const useItem = async (e) => {
   } else if (classList.contains('course_too')) {
     const newBody = JSON.stringify({ ...body, 'product_id': '4'})
     await fetch('http://localhost:3000/order', { ...options, body: newBody })
-    console.log(JSON.stringify({ ...options, body }))
   }
 }
 
